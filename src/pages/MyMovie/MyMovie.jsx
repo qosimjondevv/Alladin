@@ -1,4 +1,4 @@
-import "./Mymovie.scss";
+import "./MyMovie.scss";
 import { Footer, Sidebar } from "../../containers";
 import { CardSlider, ContinueWatching } from "../../components";
 
