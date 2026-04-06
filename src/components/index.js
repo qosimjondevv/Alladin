@@ -1,0 +1,9 @@
+export { MovieCard } from "./MovieCard";
+export { SliderHeader } from "./SliderHeader";
+export { CardSlider } from "./CardSlider/";
+export { MovieBanner } from "./MovieBanner";
+export { ContinueWatching } from "./ContinueWatching";
+export { CatalogFilterBar } from "./CatalogFilterBar";
+export { ListCatalog } from "./ListCatalog";
+export { Pagination } from "./Pagination";
+export { ActorCard } from "./ActorCard";

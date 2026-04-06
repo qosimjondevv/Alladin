@@ -1,0 +1,83 @@
+.footer {
+  background: #0f0e15;
+  padding: 34px 0;
+}
+
+.f-top {
+  display: flex;
+  align-items: center;
+  gap: 108px;
+  padding-bottom: 24px;
+}
+
+.f-logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.f-nav {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+
+  &__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover,
+    &.active {
+      color: #fff;
+    }
+  }
+}
+
+.f-socials {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.f-bottom {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+}
+
+.f-copy {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.f-legal {
+  display: flex;
+  gap: 32px;
+
+  a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}
+
+.f-apps {
+  display: flex;
+  gap: 24px;
+  margin-left: auto;
+
+  img {
+    height: 38px;
+  }
+}

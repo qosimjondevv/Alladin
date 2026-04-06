@@ -1,0 +1,81 @@
+.container-header {
+  margin-top: 186px;
+  margin-left: 38px;
+}
+.group-novinka {
+  display: flex;
+  gap: 14px;
+  .novinka {
+    padding: 6px 12px;
+    background-color: #f4415f;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #fff;
+    text-align: center;
+  }
+  .fullHd {
+    padding: 6px 12px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 100%;
+    color: #2c2c2e;
+  }
+}
+.header-text {
+  font-size: 48px;
+  line-height: 58%;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 22px;
+}
+
+.cinemed {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 22px;
+
+  .text16 {
+    font-size: 12px;
+  }
+  .imd {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+  }
+  .cinema-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+  }
+}
+
+.btn-header {
+  display: flex;
+  gap: 32px;
+  margin-top: 22px;
+
+  .potpiski-btn {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    background-color: #5931ac;
+    border-radius: 4px;
+  }
+  .izabrani-btn {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    background-color: #3c3c4399;
+    border-radius: 4px;
+  }
+}

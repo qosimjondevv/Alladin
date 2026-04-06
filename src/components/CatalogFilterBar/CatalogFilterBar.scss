@@ -1,0 +1,65 @@
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+.fb-select {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  &__label {
+    display: block;
+    font-size: 10px;
+    color: #c7c7cc;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  &__value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__arrow {
+    font-size: 16px;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: #2a2836;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 6px;
+    z-index: 200;
+    min-width: 160px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  }
+
+  &__option {
+    padding: 8px 12px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 6px;
+    transition: all 0.15s;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.07);
+      color: #fff;
+    }
+    &.active {
+      color: #9169e4;
+      font-weight: 600;
+    }
+  }
+}

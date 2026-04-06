@@ -1,0 +1,108 @@
+.sp {
+  padding-top: 68px;
+  min-height: 100vh;
+  background: #16151d;
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  &__input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    font-family: "Nunito", sans-serif;
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  &__popular {
+    margin-top: 32px;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 0;
+    }
+
+    &-item {
+      font-size: 18px;
+      color: #fff;
+      opacity: 0.9;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__results {
+    margin-top: 32px;
+
+    &-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__skeleton {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__skeleton-card {
+    width: 174px;
+    height: 264px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #1e1d2a 25%, #2a2836 50%, #1e1d2a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    flex-shrink: 0;
+  }
+
+  &__empty {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

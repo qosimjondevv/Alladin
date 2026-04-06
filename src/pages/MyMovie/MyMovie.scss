@@ -1,0 +1,12 @@
+.Mymovie {
+  .sl-head__btns {
+    display: none;
+  }
+
+  .mymovie__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    margin-bottom: 180px;
+  }
+}

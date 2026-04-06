@@ -1,0 +1,127 @@
+.banner {
+  display: flex;
+  width: 100%;
+  border-radius: 12px;
+  background: #201e27;
+  margin: 48px 0 40px;
+
+  &__poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__info {
+    padding: 0 32px 48px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+
+  &__badges {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 160px;
+    margin-top: 20px;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 6px;
+
+    .star {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.15);
+      &.filled {
+        color: #fff;
+      }
+    }
+  }
+
+  &__kp {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+
+    b {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-right: 4px;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 12px;
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 24px;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 32px;
+    margin-top: 60px;
+  }
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+
+  &--exclusive {
+    background: #2f2d38;
+    color: #fff;
+  }
+  &--age {
+    background: #2f2d38;
+    color: #fff;
+  }
+  &--quality {
+    background: #fff;
+    color: #2c2c2e;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &--watch {
+    background: #5931ac;
+  }
+  &--fav {
+    background: #2f2d38;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #fff;
+
+    small {
+      font-size: 11px;
+      opacity: 0.6;
+    }
+  }
+}

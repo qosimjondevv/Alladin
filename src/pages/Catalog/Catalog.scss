@@ -1,0 +1,34 @@
+.catalog {
+  padding-top: 68px;
+  min-height: 100vh;
+  background: #16151d;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    padding-top: 32px;
+    margin-bottom: 8px;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__skeleton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
