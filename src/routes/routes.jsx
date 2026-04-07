@@ -7,6 +7,7 @@ import { Profile } from "../pages/Profile/Profile";
 import { MyMovie } from "../pages/MyMovie/MyMovie";
 import { Person } from "../pages/Person/Person";
 import { Collection } from "../pages/Collection/Collection";
+import { Register } from "../pages/Register";
 
 export const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ export const AppRouter = () => {
       <Route path="/my" element={<MyMovie />} />
       <Route path="/person/:id" element={<Person />} />
       <Route path="/collections" element={<Collection />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   );
 };

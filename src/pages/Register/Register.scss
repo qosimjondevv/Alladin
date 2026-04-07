@@ -1,0 +1,133 @@
+.reg {
+  min-height: 100vh;
+  background: #16151d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  // xira background effect
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  &__box {
+    position: relative;
+    z-index: 1;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #2a2836;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      opacity: 0.6;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__sub {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    margin-top: -4px;
+  }
+
+  &__fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  &__field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    transition: border-color 0.2s;
+
+    &:focus-within {
+      border-color: #6c5ce7;
+    }
+
+    &.error {
+      border-color: #d3465b;
+    }
+
+    &-icon {
+      width: 18px;
+      height: 18px;
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      color: #fff;
+      font-family: "Nunito", sans-serif;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &__error {
+    font-size: 12px;
+    color: #d3465b;
+    padding-left: 4px;
+    margin-top: -2px;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 14px;
+    background: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    transition: background 0.2s;
+    margin-top: 8px;
+
+    &:hover {
+      background: #7d6ff0;
+    }
+  }
+}
