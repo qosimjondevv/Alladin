@@ -68,10 +68,7 @@ export const Register = () => {
           </div>
           {errors.password && <p className="reg__error">{errors.password}</p>}
 
-          {/* <div className="reg__field">
-            <img src={iconUser} alt="" className="reg__field-icon" />
-            <input type="password" placeholder="Повторите пароль" />
-          </div> */}
+
         </div>
 
         <button className="reg__btn" onClick={handleSubmit}>
