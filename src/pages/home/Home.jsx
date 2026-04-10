@@ -3,7 +3,9 @@ import imgSite from "../../assets/img/asd.png";
 import { Sidebar, Footer, Header } from "../../containers";
 import { CardSlider, MovieBanner, ContinueWatching } from "../../components";
 
+
 export const Home = () => {
+  
   return (
     <div className="home">
       <div className="hero-bg">
@@ -29,7 +31,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

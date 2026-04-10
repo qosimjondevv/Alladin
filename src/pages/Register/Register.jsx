@@ -10,27 +10,21 @@ export const Register = () => {
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim()) e.name = "Имя обязательно";
+    if (!form.name.trim())     e.name     = "Имя обязательно";
     if (!form.password.trim()) e.password = "Пароль обязателен";
     return e;
   };
 
   const handleSubmit = () => {
     const e = validate();
-    if (Object.keys(e).length) {
-      setErrors(e);
-      return;
-    }
-    localStorage.setItem(
-      "user",
-      JSON.stringify({ name: form.name, password: form.password }),
-    );
+    if (Object.keys(e).length) { setErrors(e); return; }
+    localStorage.setItem("user", JSON.stringify({ name: form.name, password: form.password }));
     nav("/");
   };
 
   const handleChange = (field, value) => {
-    setForm((f) => ({ ...f, [field]: value }));
-    setErrors((e) => ({ ...e, [field]: "" }));
+    setForm(f => ({ ...f, [field]: value }));
+    setErrors(e => ({ ...e, [field]: "" }));
   };
 
   return (
@@ -41,9 +35,7 @@ export const Register = () => {
         </div>
 
         <h2 className="reg__title">Вы регистрируетесь на alladdin</h2>
-        <p className="reg__sub">
-          Придумайте пароль для входа на всех устройствах.
-        </p>
+        <p className="reg__sub">Придумайте пароль для входа на всех устройствах.</p>
 
         <div className="reg__fields">
           <div className={`reg__field ${errors.name ? "error" : ""}`}>
@@ -52,7 +44,7 @@ export const Register = () => {
               type="text"
               placeholder="Имя"
               value={form.name}
-              onChange={(e) => handleChange("name", e.target.value)}
+              onChange={e => handleChange("name", e.target.value)}
             />
           </div>
           {errors.name && <p className="reg__error">{errors.name}</p>}
@@ -63,11 +55,10 @@ export const Register = () => {
               type="password"
               placeholder="Придумайте пароль"
               value={form.password}
-              onChange={(e) => handleChange("password", e.target.value)}
+              onChange={e => handleChange("password", e.target.value)}
             />
           </div>
           {errors.password && <p className="reg__error">{errors.password}</p>}
-
 
         </div>
 

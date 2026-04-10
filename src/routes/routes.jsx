@@ -9,18 +9,24 @@ import { Person } from "../pages/Person/Person";
 import { Collection } from "../pages/Collection/Collection";
 import { Register } from "../pages/Register";
 
+
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 export const AppRouter = () => {
-  const user = JSON.parse(localStorage.getItem("user") || "null");
+  const navigate = useNavigate();
+
+useEffect(() => {
+  const user = localStorage.getItem("user");
+  if (!user) navigate("/register");
+}, []);
 
   return (
     <Routes>
-      {!user ? (
-        <>
+      
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<Navigate to="/register" replace />} />
-        </>
-      ) : (
-        <>
+                <>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/search" element={<Search />} />
@@ -33,7 +39,7 @@ export const AppRouter = () => {
           <Route path="/register" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </>
-      )}
+    
     </Routes>
   );
 };
