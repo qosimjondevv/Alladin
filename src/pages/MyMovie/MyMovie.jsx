@@ -1,5 +1,5 @@
 import "./MyMovie.scss";
-import { Footer, Sidebar } from "../../containers";
+import { Footer, Sidebar }              from "../../containers";
 import { CardSlider, ContinueWatching } from "../../components";
 
 export const MyMovie = () => (
@@ -7,13 +7,13 @@ export const MyMovie = () => (
     <Sidebar />
     <div className="mymovie">
       <div className="container">
-        <ContinueWatching />
+          <ContinueWatching />
         <CardSlider title="Избранное" type="popular" path="/popular" />
-        <div className="aladin">
+        <div className="mymovie__bottom">
           <CardSlider title="Сериалы" type="series" path="/series" />
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
   </>
 );

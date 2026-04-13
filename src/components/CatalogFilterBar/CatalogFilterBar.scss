@@ -1,15 +1,22 @@
 .filter-bar {
   display: flex;
   align-items: center;
-  gap: 120px;
+  gap: 40px;
   padding: 24px 0;
   margin-bottom: 24px;
+  overflow-x: auto;
+  overflow-y: visible;         
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar { display: none; }
+
+  @media (max-width: 768px) { gap: 24px; }
 }
 
 .fb-select {
   position: relative;
   cursor: pointer;
   user-select: none;
+  flex-shrink: 0;
 
   &__label {
     display: block;
@@ -17,6 +24,8 @@
     color: #c7c7cc;
     margin-bottom: 4px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
   }
 
   &__value {
@@ -25,41 +34,34 @@
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    white-space: nowrap;
   }
 
-  &__arrow {
-    font-size: 16px;
-  }
+  &__arrow { font-size: 14px; }
 
   &__dropdown {
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
+    position: fixed;        
     background: #2a2836;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 8px;
     padding: 6px;
-    z-index: 200;
+    z-index: 9999;            
     min-width: 160px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    margin-top: 8px;
   }
 
   &__option {
     padding: 8px 12px;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255,255,255,0.7);
     border-radius: 6px;
     transition: all 0.15s;
     cursor: pointer;
+    white-space: nowrap;
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.07);
-      color: #fff;
-    }
-    &.active {
-      color: #9169e4;
-      font-weight: 600;
-    }
+    &:hover { background: rgba(255,255,255,0.07); color: #fff; }
+    &.active { color: #9169e4; font-weight: 600; }
   }
 }

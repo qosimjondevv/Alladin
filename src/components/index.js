@@ -7,3 +7,8 @@ export { CatalogFilterBar } from "./CatalogFilterBar";
 export { ListCatalog } from "./ListCatalog";
 export { Pagination } from "./Pagination";
 export { ActorCard } from "./ActorCard";
+export { ActorSlider } from "./ActorSlider";
+export {MovieHero} from "./MovieHero";
+export {ProfileCard} from "./ProfileCard";
+export {ProfileModal} from "./ProfileModal";
+export {TrailerBlock} from "./TrailerBlock";

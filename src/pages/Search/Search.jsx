@@ -1,30 +1,21 @@
 import "./Search.scss";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate }     from "react-router-dom";
+import { useEffect }       from "react";
 import { Sidebar, Footer } from "../../containers";
 import { POPULAR_QUERIES } from "../../constants";
-import { tmdb, W500 } from "../../api/tmdb";
-import iconSearch from "../../assets/icons/search.svg";
+import { useSearch }       from "../../hooks/useSearch";
+import iconSearch          from "../../assets/icons/search.svg";
 
 export const Search = () => {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false);
   const nav = useNavigate();
-
-  const handleSearch = async (q) => {
-    setQuery(q);
-    if (!q.trim()) {
-      setResults([]);
-      return;
-    }
-    setLoading(true);
-    const data = await tmdb.search(q);
-    setResults(data.results?.filter((r) => r.poster_path) || []);
-    setLoading(false);
-  };
-
+  const { query, results, loading, search } = useSearch();
   const hasQuery = query.trim().length > 0;
+
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") nav(-1); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [nav]);
 
   return (
     <>
@@ -38,9 +29,12 @@ export const Search = () => {
               type="text"
               placeholder="Название фильма"
               value={query}
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e) => search(e.target.value)}
               autoFocus
             />
+            {query && (
+              <button className="sp__clear" onClick={() => search("")}>✕</button>
+            )}
           </div>
 
           {!hasQuery && (
@@ -48,11 +42,7 @@ export const Search = () => {
               <h3 className="sp__popular-title">Популярные запросы:</h3>
               <div className="sp__popular-grid">
                 {POPULAR_QUERIES.map((q, i) => (
-                  <span
-                    key={i}
-                    className="sp__popular-item"
-                    onClick={() => handleSearch(q)}
-                  >
+                  <span key={i} className="sp__popular-item" onClick={() => search(q)}>
                     {q}
                   </span>
                 ))}
@@ -62,36 +52,32 @@ export const Search = () => {
 
           {hasQuery && (
             <div className="sp__results">
-              <h3 className="sp__results-title">Результаты поиска:</h3>
+              <h3 className="sp__results-title">
+                {loading ? "Поиск..." : `Найдено: ${results.length}`}
+              </h3>
+
               {loading && (
                 <div className="sp__skeleton">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="sp__skel" />
-                  ))}
+                  {[...Array(6)].map((_, i) => <div key={i} className="sp__skel" />)}
                 </div>
               )}
+
               {!loading && results.length > 0 && (
-                <div className="sp__grid aladin">
+                <div className="sp__grid">
                   {results.map((m) => (
-                    <div
-                      key={m.id}
-                      className="card"
-                      onClick={() => nav(`/movie/${m.id}`)}
-                    >
+                    <div key={m.id} className="card" onClick={() => nav(`/movie/${m.id}`)}>
                       <div className="card__thumb">
-                        <img
-                          src={`${W500}${m.poster_path}`}
-                          alt={m.title || m.name}
-                        />
+                        <img src={m.img} alt={m.title} />
                       </div>
-                      <p className="card__title">{m.title || m.name}</p>
+                      <p className="card__title">{m.title}</p>
                       <p className="card__sub card__sub--white">
-                        {m.media_type === "tv" ? "Сериал" : "Фильм"}
+                        {m.mediaType === "tv" ? "Сериал" : "Фильм"}
                       </p>
                     </div>
                   ))}
                 </div>
               )}
+
               {!loading && results.length === 0 && (
                 <p className="sp__empty">По вашему запросу ничего не найдено</p>
               )}

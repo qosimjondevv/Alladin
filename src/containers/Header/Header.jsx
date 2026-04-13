@@ -1,37 +1,39 @@
 import "./Header.scss";
-import iconIMD from "../../assets/icons/iconMND.svg";
+import iconIMD    from "../../assets/icons/iconMND.svg";
 import iconCinema from "../../assets/icons/iconCnema.svg";
-import iconPlus from "../../assets/icons/iconPlus.svg";
-import iconPlay from "../../assets/icons/iconPlay.svg";
-export const Header = () => {
-  return (
-    <div className="header container">
-      <div className="container-header">
-        <div className="group-novinka">
-          <div className="novinka">Новинка</div>
-          <div className="fullHd">FULL HD</div>
-        </div>
-        <h1 className="header-text">Ford против Ferrari</h1>
-        <div className="cinemed">
-          <div className="text16">2019 | 16 +</div>
-          <div className="imd">
-            <img src={iconIMD} alt="" /> 6.9
-          </div>
-          <div className="cinema-text">
-            <img src={iconCinema} alt="" /> 6.518
-          </div>
-        </div>
-        <div className="btn-header">
-          <div className="potpiski-btn">
-            <img src={iconPlay} alt="" />
-            Смотреть по подписке
-          </div>
-          <div className="izabrani-btn">
-            <img src={iconPlus} alt="" />
-            Добавить в избранное
-          </div>
-        </div>
+import iconPlus   from "../../assets/icons/iconPlus.svg";
+import iconPlay   from "../../assets/icons/iconPlay.svg";
+
+export const Header = () => (
+  <div className="header container">
+    <div className="header__inner">
+      <div className="header__tags">
+        <span className="header__tag tag--red">Новинка</span>
+        <span className="header__tag tag--white">FULL HD</span>
+      </div>
+
+      <h1 className="header__title">Ford против Ferrari</h1>
+
+      <div className="header__meta">
+        <span className="header__year">2019 | 16+</span>
+        <span className="header__rating">
+          <img src={iconIMD} alt="IMDb" /> 6.9
+        </span>
+        <span className="header__kp">
+          <img src={iconCinema} alt="KP" /> 6.518
+        </span>
+      </div>
+
+      <div className="header__btns">
+        <button className="header__btn btn--watch">
+          <img src={iconPlay} alt="" />
+          <span>Смотреть по подписке</span>
+        </button>
+        <button className="header__btn btn--fav">
+          <img src={iconPlus} alt="" />
+          <span>Добавить в избранное</span>
+        </button>
       </div>
     </div>
-  );
-};
+  </div>
+);

@@ -1,11 +1,13 @@
 import "./Register.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import iconUser from "../../assets/icons/iconUser.svg";
 
 export const Register = () => {
   const nav = useNavigate();
-  const [form, setForm] = useState({ name: "", password: "" });
+  const { login } = useAuth();
+  const [form,   setForm]   = useState({ name: "", password: "" });
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -18,13 +20,13 @@ export const Register = () => {
   const handleSubmit = () => {
     const e = validate();
     if (Object.keys(e).length) { setErrors(e); return; }
-    localStorage.setItem("user", JSON.stringify({ name: form.name, password: form.password }));
+    login(form.name, form.password);
     nav("/");
   };
 
   const handleChange = (field, value) => {
-    setForm(f => ({ ...f, [field]: value }));
-    setErrors(e => ({ ...e, [field]: "" }));
+    setForm((f) => ({ ...f, [field]: value }));
+    setErrors((e) => ({ ...e, [field]: "" }));
   };
 
   return (
@@ -44,7 +46,9 @@ export const Register = () => {
               type="text"
               placeholder="Имя"
               value={form.name}
-              onChange={e => handleChange("name", e.target.value)}
+              onChange={(e) => handleChange("name", e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+              autoComplete="username"
             />
           </div>
           {errors.name && <p className="reg__error">{errors.name}</p>}
@@ -55,11 +59,12 @@ export const Register = () => {
               type="password"
               placeholder="Придумайте пароль"
               value={form.password}
-              onChange={e => handleChange("password", e.target.value)}
+              onChange={(e) => handleChange("password", e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
+              autoComplete="new-password"
             />
           </div>
           {errors.password && <p className="reg__error">{errors.password}</p>}
-
         </div>
 
         <button className="reg__btn" onClick={handleSubmit}>

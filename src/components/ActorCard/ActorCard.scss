@@ -18,9 +18,7 @@
       transition: transform 0.3s;
     }
 
-    &:hover img {
-      transform: scale(1.05);
-    }
+    &:hover img { transform: scale(1.05); }
   }
 
   &__name {
@@ -35,7 +33,7 @@
 
   &__role {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255,255,255,0.4);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

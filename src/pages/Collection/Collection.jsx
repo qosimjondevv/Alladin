@@ -9,7 +9,6 @@ export const Collection = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log("WORKING 🔥");
 
     tmdb
       .series()

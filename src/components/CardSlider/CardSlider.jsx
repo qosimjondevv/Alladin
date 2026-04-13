@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
 import "./CardSlider.scss";
+import { useState, useEffect } from "react";
 import { SliderHeader } from "../SliderHeader/SliderHeader";
-import { MovieCard } from "../MovieCard/MovieCard";
-import { tmdb, W500 } from "../../api/tmdb";
+import { MovieCard }    from "../MovieCard/MovieCard";
+import { tmdb, W500 }   from "../../api/tmdb";
 
 const VISIBLE = 6;
 
 const FETCH = {
-  new: tmdb.newMovies,
+  new:     tmdb.newMovies,
   popular: tmdb.popular,
-  series: tmdb.series,
-  coming: tmdb.coming,
-  top: tmdb.top,
+  series:  tmdb.series,
+  coming:  tmdb.coming,
+  top:     tmdb.top,
 };
 
 export const CardSlider = ({ title, movies: prop, type, path }) => {
-  const [movies, setMovies] = useState(prop || []);
-  const [start, setStart] = useState(0);
+  const [movies,  setMovies]  = useState(prop || []);
+  const [start,   setStart]   = useState(0);
   const [loading, setLoading] = useState(!!type);
 
   useEffect(() => {
@@ -24,13 +24,13 @@ export const CardSlider = ({ title, movies: prop, type, path }) => {
     FETCH[type]().then((d) => {
       setMovies(
         (d.results || []).map((m) => ({
-          id: m.id,
-          tmdbId: m.id,
-          title: m.title || m.name,
+          id:       m.id,
+          tmdbId:   m.id,
+          title:    m.title || m.name,
           subtitle: "Подписка",
-          badge: null,
-          img: m.poster_path ? `${W500}${m.poster_path}` : null,
-        })),
+          badge:    null,
+          img:      m.poster_path ? `${W500}${m.poster_path}` : null,
+        }))
       );
       setLoading(false);
     });
@@ -51,21 +51,13 @@ export const CardSlider = ({ title, movies: prop, type, path }) => {
       />
       {loading ? (
         <div className="slider__skeleton">
-          {[...Array(VISIBLE)].map((_, i) => (
-            <div key={i} className="slider__skel" />
-          ))}
+          {[...Array(VISIBLE)].map((_, i) => <div key={i} className="slider__skel" />)}
         </div>
       ) : (
         <div className="slider__list">
           {movies.slice(start, start + VISIBLE).map((m) => (
-            <MovieCard
-              key={m.id}
-              img={m.img}
-              title={m.title}
-              subtitle={m.subtitle}
-              badge={m.badge}
-              tmdbId={m.tmdbId}
-            />
+            <MovieCard key={m.id} img={m.img} title={m.title}
+              subtitle={m.subtitle} badge={m.badge} tmdbId={m.tmdbId} />
           ))}
         </div>
       )}

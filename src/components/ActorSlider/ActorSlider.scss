@@ -1,0 +1,51 @@
+.actor-slider {
+  margin-bottom: 48px;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 8px;
+
+    button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+
+      img {
+        width: 18px;
+        height: 18px;
+        filter: brightness(10);
+      }
+
+      &:hover { background: rgba(255,255,255,0.15); }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar { display: none; }
+  }
+}

@@ -24,16 +24,21 @@
   .hero-vignette {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, #16151d 0%, rgba(26, 28, 42, 0) 60%);
+    background: linear-gradient(
+      to top,
+      #16151d 0%,
+      #16151d 20%,
+      rgba(26,28,42,0.6) 60%,
+      rgba(26,28,42,0) 100%
+    );
   }
 }
 
 .hero-content {
   position: relative;
   z-index: 10;
-  padding-top: 68px; // topbar balandligi — o'zgarishsiz
+  padding-top: 68px;
   color: #fff;
 }
-.aladin {
-  margin-bottom: 80px;
-}
+
+.home__bottom { margin-bottom: 80px; }
