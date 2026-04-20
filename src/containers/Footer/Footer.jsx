@@ -23,13 +23,13 @@ export const Footer = () => {
             ))}
           </nav>
           <div className="f-socials">
-            <a href="#"><img src={iconFb} alt="Facebook" /></a>
-            <a href="#"><img src={iconTw} alt="Twitter"  /></a>
-            <a href="#"><img src={iconTg} alt="Telegram" /></a>
+            <a href="#"><img src={iconFb} alt="Facebook"/></a>
+            <a href="#"><img src={iconTw} alt="Twitter"/></a>
+            <a href="#"><img src={iconTg} alt="Telegram"/></a>
           </div>
         </div>
 
-        <div className="f-divider" />
+        <div className="f-divider"/>
 
         <div className="f-bottom">
           <span className="f-copy">© 2020 Aladdin</span>
@@ -39,8 +39,8 @@ export const Footer = () => {
             <a href="#">Контакты</a>
           </div>
           <div className="f-apps">
-            <a href="#"><img src={iconApple}  alt="App Store"   /></a>
-            <a href="#"><img src={iconGoogle} alt="Google Play" /></a>
+            <a href="#"><img src={iconApple}  alt="App Store"/></a>
+            <a href="#"><img src={iconGoogle} alt="Google Play"/></a>
           </div>
         </div>
       </div>

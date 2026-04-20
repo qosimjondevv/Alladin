@@ -27,6 +27,6 @@ const safeJSON = {
   },
 };
 
-export const getUser  = ()     => safeJSON.get("user");
-export const setUser  = (data) => safeJSON.set("user", data);
-export const removeUser = ()   => safeJSON.remove("user");
+export const getUser = () => safeJSON.get("user");
+export const setUser = (data) => safeJSON.set("user", data);
+export const removeUser = () => safeJSON.remove("user");

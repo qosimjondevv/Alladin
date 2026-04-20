@@ -4,8 +4,8 @@ import { tmdb } from "../api/tmdb";
 
 export const usePerson = () => {
   const { id } = useParams();
-  const [person,  setPerson]  = useState(null);
-  const [movies,  setMovies]  = useState([]);
+  const [person, setPerson] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

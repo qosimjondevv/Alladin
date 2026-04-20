@@ -7,19 +7,19 @@ const get = (path) =>
   fetch(`${BASE}${path}&api_key=${KEY}`).then((r) => r.json());
 
 export const tmdb = {
-  popular: () => get("/movie/popular?language=ru-RU"), // mashhur filmlar
-  newMovies: () => get("/movie/now_playing?language=ru-RU"), // yangi filmlar
+  popular: () => get("/movie/popular?language=ru-RU"), 
+  newMovies: () => get("/movie/now_playing?language=ru-RU"),
   series: () => get("/tv/popular?language=ru-RU"),
-  coming: () => get("/movie/upcoming?language=ru-RU"),  // hali jiqmagan tez orada jiqadigon filmlar 
-  top: () => get("/movie/top_rated?language=ru-RU"), //topdegilar
-  movie: (id) =>  // bitta kina haqida to'liq malumot
+  coming: () => get("/movie/upcoming?language=ru-RU"),  
+  top: () => get("/movie/top_rated?language=ru-RU"), 
+  movie: (id) => 
     get(`/movie/${id}?language=ru-RU&append_to_response=credits,videos`),
-  tv: (id) => get(`/tv/${id}?language=ru-RU&append_to_response=credits,videos`),// bu ham serial uchun
+  tv: (id) => get(`/tv/${id}?language=ru-RU&append_to_response=credits,videos`),
   search: (q) => 
     get(`/search/multi?language=ru-RU&query=${encodeURIComponent(q)}`),
   person: (id) => get(`/person/${id}/movie_credits?language=ru-RU`),
-  discover: (params) => get(`/discover/movie?language=ru-RU&${params}`), // filter qilingan filimlar 
-  genres: () => get("/genre/movie/list?language=ru-RU"), // barcha janrlar ro'yhati
+  discover: (params) => get(`/discover/movie?language=ru-RU&${params}`), 
+  genres: () => get("/genre/movie/list?language=ru-RU"),
   personDetail: (id) => get(`/person/${id}?language=ru-RU`),
 
 };

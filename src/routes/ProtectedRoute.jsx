@@ -3,7 +3,7 @@ import { useAuth }from "../utils/auth";
 
 export const ProtectedRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
-  const location       = useLocation();
+  const location = useLocation();
 
   if (!isLoggedIn) {
     return (

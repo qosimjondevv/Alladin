@@ -2,21 +2,21 @@ import { useState, useEffect, useRef } from "react";
 import { tmdb, W500 } from "../api/tmdb";
 
 export const useContinueWatching = () => {
-  const [movies,  setMovies]  = useState([]);
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [active,  setActive]  = useState(0);
+  const [active, setActive] = useState(0);
   const timerRef = useRef(null);
-  const listRef  = useRef(null);
+  const listRef = useRef(null);
 
   useEffect(() => {
     tmdb.popular().then((d) => {
       setMovies(
         (d.results || []).slice(0, 3).map((m) => ({
-          id:       m.id,
-          tmdbId:   m.id,
-          title:    m.title,
+          id: m.id,
+          tmdbId: m.id,
+          title: m.title,
           progress: Math.floor(Math.random() * 80) + 10,
-          img:      m.backdrop_path ? `${W500}${m.backdrop_path}` : null,
+          img: m.backdrop_path ? `${W500}${m.backdrop_path}` : null,
         }))
       );
       setLoading(false);
@@ -29,7 +29,7 @@ export const useContinueWatching = () => {
       if (window.innerWidth > 768) return;
       setActive((prev) => {
         const next = (prev + 1) % count;
-        const el   = listRef.current;
+        const el = listRef.current;
         if (el) el.scrollTo({ left: (el.scrollWidth / count) * next, behavior: "smooth" });
         return next;
       });

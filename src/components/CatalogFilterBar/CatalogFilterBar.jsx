@@ -18,11 +18,11 @@ export const CatalogFilterBar = ({
   });
 
   const apply = (next) => {
-    setSelected(next);    // 1. UI state yangilash
-    onFilter?.({          // 2. Parent ga filter yuborish
+    setSelected(next);    
+    onFilter?.({       
       genre:   tmdbGenres.find((g) => g.name === next.genre)?.id || "",
       country: COUNTRIES[next.country] || "",
-      year:    next.year === "Все годы" ? "" : next.year,
+      year: next.year === "Все годы" ? "" : next.year,
     });
   };
   return (

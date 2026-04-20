@@ -34,7 +34,6 @@ export const MovieHero = ({ data, year, countries }) => {
     </div>
   );
 };
-
 const InfoRow = ({ label, value }) => (
   <div className="movie-hero__row">
     <span className="movie-hero__lbl">{label}</span>

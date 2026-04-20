@@ -1,5 +1,5 @@
 import "./MovieBanner.scss";
-import Banner   from "../../assets/img/movieBanner.png";
+import Banner from "../../assets/img/movieBanner.png";
 import iconPlus from "../../assets/icons/iconPlus.svg";
 import iconPlay from "../../assets/icons/iconPlay.svg";
 

@@ -11,12 +11,12 @@ export const useMovieDetail = (id) => {
     setData(null);
 
     tmdb
-      .movie(id)  // film malumoti keladi kemasa
+      .movie(id)  
       .then((m) => {
         if (m?.id && (m?.title || m?.name)) {
           setData(m);
         } else {
-          return tmdb.tv(id).then((tv) => {    //serial keladi 
+          return tmdb.tv(id).then((tv) => {    
             if (tv?.id) setData({ ...tv, title: tv.name });
           });
         }

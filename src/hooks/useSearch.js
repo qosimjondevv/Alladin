@@ -4,7 +4,7 @@ import { useEscapeBack } from "./useEscapeBack";
 
 export const useSearch = () => {
   useEscapeBack();
-  const [query,   setQuery]   = useState("");
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -19,10 +19,10 @@ export const useSearch = () => {
         (data.results || [])
           .filter((r) => r.poster_path)
           .map((r) => ({
-            id:        r.id,
-            title:     r.title || r.name,
+            id: r.id,
+            title: r.title || r.name,
             mediaType: r.media_type,
-            img:       `${W500}${r.poster_path}`,
+            img: `${W500}${r.poster_path}`,
           }))
       );
     } finally {

@@ -5,16 +5,16 @@ import { useAuth } from "../../utils/auth";
 import iconUser from "../../assets/icons/iconUser.svg";
 
 export const Register = () => {
-  const nav      = useNavigate();
+  const nav = useNavigate();
   const location = useLocation();
   const { login } = useAuth();
-  const [form,   setForm]   = useState({ name: "", password: "" });
+  const [form, setForm] = useState({ name: "", password: "" });
   const [errors, setErrors] = useState({});
   const from = location.state?.from || "/";
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())     e.name     = "Имя обязательно";
+    if (!form.name.trim()) e.name = "Имя обязательно";
     if (!form.password.trim()) e.password = "Пароль обязателен";
     return e;
   };

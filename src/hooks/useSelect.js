@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 export const useSelect = () => {
   const [open, setOpen] = useState(false);
-  const [pos,  setPos]  = useState({ top: 0, left: 0 });
+  const [pos, setPos] = useState({ top: 0, left: 0 });
   const ref = useRef(null);
 
   const handleOpen = () => {
