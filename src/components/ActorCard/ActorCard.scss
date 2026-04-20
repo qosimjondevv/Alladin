@@ -1,0 +1,41 @@
+.actor {
+  width: 140px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &__img {
+    width: 140px;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1e1d2a;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    &:hover img { transform: scale(1.05); }
+  }
+
+  &__name {
+    margin: 8px 0 2px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__role {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

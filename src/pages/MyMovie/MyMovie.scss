@@ -1,0 +1,17 @@
+.mymovie {
+  margin-top: 102px;
+  min-height: 100vh;
+  background: #16151d;
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    padding-top: 24px;
+    margin-bottom: 8px;
+
+    @media (max-width: 480px) { font-size: 22px; }
+  }
+
+  &__bottom { margin-bottom: 80px; }
+}

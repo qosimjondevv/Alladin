@@ -1,0 +1,93 @@
+.subs {
+  padding-top: 88px;
+  min-height: 100vh;
+  background: #16151d;
+
+  &__title {
+    font-size: 32px; font-weight: 800; color: #fff;
+    padding-top: 32px; margin-bottom: 48px; text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 80px;
+  }
+
+  &__card {
+    position: relative;
+    width: 300px;
+    background: #1e1c2a;
+    border-radius: 16px;
+    padding: 36px 28px;
+    border: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.2s;
+
+    &:hover { transform: translateY(-4px); }
+
+    &--popular {
+      border-color: #6c5ce7;
+      background: #211f30;
+    }
+
+    @media (max-width: 480px) { width: 100%; }
+  }
+
+  &__badge {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: #6c5ce7;
+    color: #fff;
+    font-size: 11px; font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__plan-name {
+    font-size: 22px; font-weight: 700; color: #fff;
+    text-align: center;
+  }
+
+  &__price {
+    text-align: center;
+    &-amount { font-size: 40px; font-weight: 900; color: #fff; }
+    &-period { font-size: 14px; color: rgba(255,255,255,0.4); margin-left: 4px; }
+  }
+
+  &__features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+
+    li {
+      font-size: 14px; color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; gap: 10px;
+    }
+  }
+
+  &__check { color: #6c5ce7; font-weight: 700; }
+
+  &__btn {
+    width: 100%;
+    padding: 14px;
+    background: #5931ac;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px; font-weight: 700;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    transition: background 0.2s;
+    &:hover { background: #7d6ff0; }
+  }
+}

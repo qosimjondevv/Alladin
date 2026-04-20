@@ -1,0 +1,140 @@
+.cw {
+  margin-top: 197px;
+  .mymovie & { margin-top: 0; }
+  &__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  &__list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  &__card {
+    width: 276px;
+    flex-shrink: 0;
+    cursor: pointer;
+    scroll-snap-align: start;
+
+    @media (max-width: 768px) {
+      width: calc(100% - 32px);
+    }
+  }
+
+  &__thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1e1d2a;
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    &:hover .cw__overlay { opacity: 1; }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &__play {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    color: #111;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3px;
+  }
+
+  &__skel {
+    width: 276px;
+    height: 172px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #1e1d2a 25%, #2a2836 50%, #1e1d2a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    flex-shrink: 0;
+
+    @media (max-width: 768px) { width: calc(100% - 32px); }
+  }
+
+  &__name {
+    margin: 8px 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background: #6c5ce7;
+    border-radius: 2px;
+  }
+
+  &__dots {
+    display: none;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+
+    @media (max-width: 768px) { display: flex; }
+  }
+
+  &__dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all 0.25s;
+
+    &--active {
+      background: #6c5ce7;
+      width: 20px;
+      border-radius: 3px;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

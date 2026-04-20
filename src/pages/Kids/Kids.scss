@@ -1,0 +1,31 @@
+.kids {
+  padding-top: 68px;
+  min-height: 100vh;
+  background: #16151d;
+
+  &__hero {
+    background: linear-gradient(135deg, #2d1b69 0%, #11998e 100%);
+    padding: 60px 24px 48px;
+    text-align: center;
+    margin-bottom: 16px;
+
+    @media (max-width: 480px) 
+    { padding: 40px 16px 32px; }
+  }
+
+  &__title {
+    font-size: 48px; 
+    font-weight: 900; 
+    color: #fff;
+    margin-bottom: 12px;
+    @media (max-width: 480px) 
+    { font-size: 32px; }
+  }
+
+  &__subtitle {
+    font-size: 16px; 
+    color: rgba(255,255,255,0.7);
+  }
+
+  &__bottom { margin-bottom: 80px; }
+}

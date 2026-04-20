@@ -1,0 +1,68 @@
+.pagination {
+  margin-top: 48px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: nowrap;
+  @media (max-width: 480px) { gap: 3px; }
+
+  button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 8px;
+    background: #201e27;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: "Nunito", sans-serif;
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+      min-width: 28px;
+      height: 28px;
+      font-size: 12px;
+      padding: 0 6px;
+    }
+
+    &:hover:not(:disabled) {
+      background: #2a2836;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    &.active {
+      background: #5931ac;
+      border-color: #5931ac;
+      font-weight: 700;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+
+  &__arrow {
+    font-size: 20px !important;
+    color: rgba(255,255,255,0.7);
+    background: transparent !important;
+    border-color: transparent !important;
+
+    &:hover:not(:disabled) {
+      background: rgba(255,255,255,0.07) !important;
+      border-color: transparent !important;
+    }
+  }
+}
+
+.dots {
+  color: rgba(255,255,255,0.3);
+  padding: 0 2px;
+  font-size: 14px;
+  line-height: 34px;
+  flex-shrink: 0;
+}
