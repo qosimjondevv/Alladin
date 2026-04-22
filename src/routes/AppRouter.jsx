@@ -43,7 +43,7 @@ export const AppRouter = () => {
       <Route path="/collections" element={<L><Collection /></L>}/>
       <Route path="/subscriptions" element={<L><Subscriptions /></L>}/>
       <Route path="/kids" element={<L><Kids /></L>}/>
-      <Route path="/search" element={<L><Search /></L>}/>
+      <Route path="/search" element={<Search />}/>
 
       <Route path="/my" element={<P><MyMovie /></P>}/>
       <Route path="/profile" element={<P><Profile /></P>}/>

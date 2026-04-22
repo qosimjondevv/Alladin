@@ -11,7 +11,6 @@ export const Header = () => (
         <span className="header__tag tag--red">Новинка</span>
         <span className="header__tag tag--white">FULL HD</span>
       </div>
-
       <h1 className="header__title">Ford против Ferrari</h1>
 
       <div className="header__meta">

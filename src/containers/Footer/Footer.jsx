@@ -28,7 +28,6 @@ export const Footer = () => {
             <a href="#"><img src={iconTg} alt="Telegram"/></a>
           </div>
         </div>
-
         <div className="f-divider"/>
 
         <div className="f-bottom">

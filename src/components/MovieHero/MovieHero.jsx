@@ -26,9 +26,9 @@ export const MovieHero = ({ data, year, countries }) => {
       </div>
 
       <div className="movie-hero__rows">
-        <InfoRow label="Год"      value={year} />
-        <InfoRow label="Страна"   value={countries} />
-        <InfoRow label="Жанр"     value={data.genres?.map((g) => g.name).join(", ")} />
+        <InfoRow label="Год" value={year} />
+        <InfoRow label="Страна" value={countries} />
+        <InfoRow label="Жанр" value={data.genres?.map((g) => g.name).join(", ")} />
         {director && <InfoRow label="Режиссёр" value={director.name} />}
       </div>
     </div>

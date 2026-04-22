@@ -35,7 +35,7 @@ export const useMovieDetail = (id) => {
     ) || data?.videos?.results?.[0];
 
   const cast = data?.credits?.cast?.slice(0, 20) ?? [];
-  const director  = data?.credits?.crew?.find((c) => c.job === "Director") ?? null;
+  const director = data?.credits?.crew?.find((c) => c.job === "Director") ?? null;
   const year = (data?.release_date || data?.first_air_date || "").slice(0, 4);
   const countries = (data?.production_countries || []).map((c) => c.name).join(", ");
 

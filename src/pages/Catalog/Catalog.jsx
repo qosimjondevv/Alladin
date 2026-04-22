@@ -5,7 +5,6 @@ import { useCatalog }from "../../hooks/useCatalog";
 
 export const Catalog = () => {
   const { movies, loading, totalPages, page, setPage, handleFilter, tmdbGenres } = useCatalog();
-
   const onPageChange = (p) => {
     setPage(p);
     window.scrollTo({ top: 0, behavior: "smooth" });

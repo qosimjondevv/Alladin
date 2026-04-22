@@ -4,14 +4,14 @@ import { toCard } from "../utils/toCard";
 
 const FETCHERS = {
   popular: tmdb.popular,
-  new:     tmdb.newMovies,
-  series:  tmdb.series,
-  coming:  tmdb.coming,
-  top:     tmdb.top,
+  new: tmdb.newMovies,
+  series: tmdb.series,
+  coming: tmdb.coming,
+  top: tmdb.top,
 };
 
 export const useMovies = (type) => {
-  const [movies,  setMovies]  = useState([]);
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(!!type);
 
   useEffect(() => {
