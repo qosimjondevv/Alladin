@@ -7,7 +7,7 @@ export const useSearch = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const timerRef = useRef(null); // debounce timer
+  const timerRef = useRef(null);
 
   const fetchResults = useCallback(async (q) => {
     if (!q.trim()) { setResults([]); return; }

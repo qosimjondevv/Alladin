@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { tmdb, W500 } from "../api/tmdb";
 
 export const useHeroSlider = () => {
-  const [movies,  setMovies]  = useState([]);
-  const [active,  setActive]  = useState(0);
+  const [movies, setMovies] = useState([]);
+  const [active, setActive] = useState(0);
   const [loading, setLoading] = useState(true);
   const timerRef = useRef(null);
 
