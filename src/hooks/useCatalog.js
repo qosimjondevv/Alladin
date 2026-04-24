@@ -33,6 +33,5 @@ export const useCatalog = () => {
     setFilters(newFilters);
     setPage(1);
   };
-
   return { movies, loading, totalPages, page, setPage, handleFilter, tmdbGenres };
 };
