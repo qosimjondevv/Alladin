@@ -49,4 +49,34 @@
     font-weight: 600;
     color: #9169e4;
   }
+  &__heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.2s;
+  opacity: 0;
+
+  &.active {
+    color: #e74c3c;
+    opacity: 1;
+  }
 }
+
+&__thumb:hover &__heart {
+  opacity: 1;
+}
+}
+
+

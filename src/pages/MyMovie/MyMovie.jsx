@@ -1,14 +1,26 @@
 import "./MyMovie.scss";
-import { CardSlider, ContinueWatching } from "../../components";
+import { MovieCard } from "../../components";
+import { useFavorites } from "../../utils/FavoritesProvider";
 
-export const MyMovie = () => (
-  <div className="mymovie">
-    <div className="container">
-      <ContinueWatching />
-      <CardSlider title="Избранное" type="popular" path="/popular" />
-      <div className="mymovie__bottom">
-        <CardSlider title="Сериалы" type="series" path="/series" />
+export const MyMovie = () => {
+  const { favorites } = useFavorites();
+
+  return (
+    <div className="mymovie">
+      <div className="container">
+        {favorites.length > 0 ? (
+          <>
+            <h2 className="mymovie__title">Избранное</h2>
+            <div className="mymovie__grid">
+              {favorites.map((m) => (
+                <MovieCard key={m.id} {...m} tmdbId={m.id} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <p className="mymovie__empty">Избранных фильмов нет</p>
+        )}
       </div>
     </div>
-  </div>
-);
+  );
+};

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { tmdb, W500 } from "../api/tmdb";
 import { useEscapeBack } from "./useEscapeBack";
 
@@ -7,9 +7,9 @@ export const useSearch = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const timerRef = useRef(null); // debounce timer
 
-  const search = useCallback(async (q) => {
-    setQuery(q);
+  const fetchResults = useCallback(async (q) => {
     if (!q.trim()) { setResults([]); return; }
 
     setLoading(true);
@@ -28,6 +28,18 @@ export const useSearch = () => {
     } finally {
       setLoading(false);
     }
+  }, []);
+
+  const search = useCallback((q) => {
+    setQuery(q);                        
+    clearTimeout(timerRef.current);    
+    timerRef.current = setTimeout(() => { 
+      fetchResults(q);                  
+    }, 400);
+  }, [fetchResults]);
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current); 
   }, []);
 
   return { query, results, loading, search };

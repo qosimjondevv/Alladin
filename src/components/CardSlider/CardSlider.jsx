@@ -9,7 +9,6 @@ export const CardSlider = ({ title, movies: prop, type, path }) => {
   const { movies: fetched, loading } = useMovies(type);
   const movies = prop || fetched;
   const [start, setStart] = useState(0);
-
   const canPrev = start > 0;
   const canNext = start + VISIBLE < movies.length;
 
